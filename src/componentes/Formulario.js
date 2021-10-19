@@ -1,15 +1,22 @@
 import React from 'react';
 
-const Formulario = () => {
+const Formulario = ({cantidad, guardarCantidad}) => {
+
+
+
     return ( 
         <form>
+            {cantidad}
             <div className="row">
                 <div>
                     <label>Cantidad Prestamo</label>
                     <input 
                         className="u-full-width" 
                         type="number" 
-                        placeholder="Ejemplo: 3000" 
+                        placeholder="Ejemplo: 3000"
+                        onChange={
+                            e => guardarCantidad(parseInt(e.target.value))
+                        } 
                     />
                 </div>
                 <div>
