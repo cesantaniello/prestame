@@ -12,7 +12,16 @@ function App() {
     const [total, guardarTotal] = useState(0);
 
     let componente;
-    (total === 0) ? componente = <Mensaje /> : componente = <Resultado />;
+    
+    if(total === 0){
+        componente = <Mensaje/>
+    }else{
+        componente = <Resultado
+                        total={total}
+                        plazo={plazo}
+                        cantidad={cantidad}
+        />
+    }
 
   return (
     <Fragment>
